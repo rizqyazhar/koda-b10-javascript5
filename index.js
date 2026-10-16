@@ -27,42 +27,30 @@ console.log("===Normal===");
 
 // Normal
 
-const convReamurNormal = (c) => {
+const suhuReamur = (s) => {
+  return s * 1.8 + 32;
+};
+const suhuKelvin = (s) => {
+  return s * 0.8;
+};
+const suhuFahrenheit = (s) => {
+  return s + 273.15;
+};
+
+const hitung = (s, rumus) => {
   let hasil = [];
-  for (let i = 0; i < c.length; i++) {
-    const suhuReamur = c[i] * 1.8 + 32;
-    hasil = [...hasil, suhuReamur];
+  for (let i = 0; i < s.length; i++) {
+    const suhu = rumus(s[i]);
+    hasil = [...hasil, suhu];
   }
   return hasil;
 };
 
-const convKelvinNormal = (c) => {
-  let hasil = [];
-  for (let i = 0; i < c.length; i++) {
-    const suhuKelvin = c[i] * 0.8;
-    hasil = [...hasil, suhuKelvin];
-  }
-  return hasil;
-};
-const convFahrenheitNormal = (c) => {
-  let hasil = [];
-  for (let i = 0; i < c.length; i++) {
-    const suhuFahrenheit = c[i] + 273.15;
-    hasil = [...hasil, suhuFahrenheit];
-  }
-  return hasil;
-};
-
-const mainNormal = (
-  suhu,
-  convReamurNormal,
-  convKelvinNormal,
-  convFahrenheitNormal,
-) => {
+const mainNormal = (suhu) => {
   console.log(`Celcius: ${suhu}`);
-  console.log(`Reamur: ${convReamurNormal(suhu)}`);
-  console.log(`Kelvin: ${convKelvinNormal(suhu)}`);
-  console.log(`Fahrenheit: ${convFahrenheitNormal(suhu)}`);
+  console.log(`Reamur: ${hitung(suhu, suhuReamur)}`);
+  console.log(`Kelvin: ${hitung(suhu, suhuKelvin)}`);
+  console.log(`Fahrenheit: ${hitung(suhu, suhuFahrenheit)}`);
 };
 
-main(suhuCelcius, convReamurNormal, convKelvinNormal, convFahrenheitNormal);
+mainNormal(suhuCelcius);
