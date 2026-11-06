@@ -5,13 +5,13 @@ const suhuCelcius = [100, 70, 80, 37, 40, 200, 30, 20, -10, -1000];
 // Built-in
 
 const convReamur = (c) => {
-  return c.map((c) => c * 1.8 + 32);
-};
-const convKelvin = (c) => {
   return c.map((c) => c * 0.8);
 };
-const convFahrenheit = (c) => {
+const convKelvin = (c) => {
   return c.map((c) => c + 273.15);
+};
+const convFahrenheit = (c) => {
+  return c.map((c) => c * 1.8 + 32);
 };
 
 const main = (suhu, convReamur, convKelvin, convFahrenheit) => {
@@ -28,13 +28,13 @@ console.log("===Normal===");
 // Normal
 
 const suhuReamur = (s) => {
-  return s * 1.8 + 32;
-};
-const suhuKelvin = (s) => {
   return s * 0.8;
 };
-const suhuFahrenheit = (s) => {
+const suhuKelvin = (s) => {
   return s + 273.15;
+};
+const suhuFahrenheit = (s) => {
+  return s * 1.8 + 32;
 };
 
 const hitung = (s, rumus) => {
